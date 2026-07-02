@@ -164,7 +164,7 @@ def handleUserClick(note):
             tk.messagebox.showinfo("Correct!", "You've selected the correct note!")
             baseFrequency = NOTE_FREQUENCIES[note + '4']
             playChord([baseFrequency])
-            fetchAndPlayRandomMp3(f'/home/deck/Python Scripts/{note}', callback=lambda: (startGameDisplayTones(), changeBackgroundColorAndDisplay('default')))
+            fetchAndPlayRandomMp3(os.path.join(os.path.dirname(__file__), 'Audio', note), callback=lambda: (startGameDisplayTones(), changeBackgroundColorAndDisplay('default')))
         else:
             tk.messagebox.showinfo("Try Again", "That was not the correct note. Try again!")
 
